@@ -3,10 +3,9 @@
  *  @copyright  Copyright (C) 2015 by yieme
  *  @module     extend-export
  *
- *  @example    extendExport().parse('module.export = { foo: 'bar' }', 'enhancement')
- *
- *  var _ExtendedExport = { foo: 'bar' }
- *  require('extendExport')(_ExtendedExport, 'enhancements')
+ *  @example    extendExport().parse("module.export = { foo: 'bar' }", 'enhancement') // produces:
+ *  var _ExtendExport = { foo: 'bar' }
+ *  require('extend-export')(_ExtendExport, 'enhancement');
  *
  */
 (function() {
@@ -28,7 +27,7 @@
    *  @param      {object} options - The options
    *  @return     {object}
    */
-  function extendExport(Export, extension) {
+  function extendExport(extension, Export) {
     function parse(text, extension) {
       if (typeof text === 'string') {
         var spacing = ['', ' ', '  ', '   ', "\t"]
