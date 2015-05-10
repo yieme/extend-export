@@ -1,8 +1,6 @@
 # extend-export
 
-Extend export
-
-<!-- [![build status](https://secure.travis-ci.org/yieme/extend-export.png)](http://travis-ci.org/yieme/extend-export) -->
+Extend a module.export
 
 ## Installation
 
@@ -53,8 +51,9 @@ require('extend-export')('superset-enhancement', {
 
 
 ```js
-var extendExport = require('extend-export')
-extendExport().parse("module.export = { foo: 'bar' }", 'enhancement') /* produces
+var parse  = require('extend-export')().parse
+var parsed = parse("module.export = { foo: 'bar' }", 'enhancement')
+console.log(parsed) /* produces:
 var _ExtendExport = { foo: 'bar' }
 require('extend-export')(_ExtendExport, 'enhancement');
 */
@@ -63,9 +62,9 @@ require('extend-export')(_ExtendExport, 'enhancement');
 #### Parse file and apply export extension
 
 ```js
-var extendExport = require('extend-export')
-extendExport().parseFile("module.export = { foo: 'bar' }", 'enhancement', function (err, parsedText) {
-console.log(parsedText) /* produces
+var parseFile = require('extend-export')().parseFile
+parseFile("module.export = { foo: 'bar' }", 'enhancement', function (err, parsedText) {
+console.log(parsedText) /* produces:
 var _ExtendExport = { foo: 'bar' }
 require('extend-export')(_ExtendExport, 'enhancement');	*/
 })
@@ -74,9 +73,9 @@ require('extend-export')(_ExtendExport, 'enhancement');	*/
 #### Parse file and apply export extension
 
 ```js
-var extendExport = require('extend-export')
-var parsedText = extendExport().parseFileSync("module.export = { foo: 'bar' }", 'enhancement')
-console.log(parsedText) /* produces
+var parseFileSync = require('extend-export')().parseFileSync
+var parsedText    = parseFileSync("module.export = { foo: 'bar' }", 'enhancement')
+console.log(parsedText) /* produces:
 var _ExtendExport = { foo: 'bar' }
 require('extend-export')(_ExtendExport, 'enhancement');	*/
 })
