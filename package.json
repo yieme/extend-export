@@ -15,13 +15,18 @@
     "type": "git",
     "url": "https://github.com/yieme/extend-export"
   },
-  "keywords": ["extend","export"],
+  "keywords": [
+    "extend",
+    "export"
+  ],
   "author": "yieme",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yieme/extend-export/issues"
   },
-  "dependencies": {   },
+  "dependencies": {
+    "lodash": "^3.8.0"
+  },
   "devDependencies": {
     "chai": "~1.10.0"
   },
